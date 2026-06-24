@@ -9,8 +9,10 @@ app.use(cors());
 app.use(express.json());
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/restaurantDB")
-  .then(() => console.log("MongoDB Connected"))
+  .connect(
+    "mongodb+srv://krishnatank1259_db_user:KRISHNA1908@cluster0.bhfn5eu.mongodb.net/restaurantDB?retryWrites=true&w=majority&appName=Cluster0"
+  )
+  .then(() => console.log("MongoDB Atlas Connected"))
   .catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
